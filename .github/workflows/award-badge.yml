@@ -1,0 +1,26 @@
+name: Award Contributor Badge
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  award-badge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on PR with Badge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prAuthor = context.payload.pull_request.user.login;
+            const badgeMarkdown = `### 🎉 Congratulations @${prAuthor}! 🎉\n\nYour Pull Request has been successfully merged! Thank you for your contribution to this Open Source project.\n\nAs promised, here is your reward. You can copy the markdown below and paste it on your GitHub profile README to show off your achievement:\n\n\`\`\`markdown\n![Awesome OSS Contributor](https://img.shields.io/badge/Awesome_OSS_Contributor-🥇-gold?style=for-the-badge)\n\`\`\`\n\n![Awesome OSS Contributor](https://img.shields.io/badge/Awesome_OSS_Contributor-🥇-gold?style=for-the-badge)\n\nKeep up the great work! 🚀`;
+            
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: badgeMarkdown
+            });

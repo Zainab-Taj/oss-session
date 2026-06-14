@@ -1,4 +1,4 @@
-name: Create Initial Issues
+name: Create More Initial Issues
 on:
   push:
     paths:
@@ -18,21 +18,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue create --title "Add your name to CONTRIBUTORS.md" --body "## Welcome!
-          This is a great issue for beginners. Your task is to:
+          gh issue create --title "Add a fun fact to FUN_FACTS.md" --body "## Welcome!
+          This is a fun beginner issue. Your task is to:
           1. Fork the repo.
-          2. Create a new file called \`CONTRIBUTORS.md\` if it doesn't exist.
-          3. Add your name to the file!
+          2. Create a new file called \`FUN_FACTS.md\` (or edit it if it exists).
+          3. Add a random fun fact about technology or programming!
           4. Submit a Pull Request.
           
-          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 1"
+          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 4"
           
-          gh issue create --title "Add a cool badge to README.md" --body "## Welcome!
-          Want to make our repo look cooler? Your task is to:
-          1. Go to [shields.io](https://shields.io/) and find a cool open source badge.
-          2. Fork this repo and add the badge markdown to the top of \`README.md\`.
-          3. Submit a Pull Request!
+          gh issue create --title "Share your favorite quote in QUOTES.md" --body "## Welcome!
+          Inspire others with your first contribution! Your task is to:
+          1. Fork this repo.
+          2. Create or edit \`QUOTES.md\`.
+          3. Add your favorite programming quote and the author.
+          4. Submit a Pull Request!
           
-          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 2"
+          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 5"
           
-          gh issue create --title "Fix a typo in the README" --body "Find any typo or grammatical error in the \`README.md\` and open a PR to fix it. If you can't find one, you can rephrase a sentence to make it sound better!" --label "good first issue" || echo "Failed to create issue 3"
+          gh issue create --title "Add a learning resource to RESOURCES.md" --body "## Welcome!
+          Help others learn! Your task is to:
+          1. Fork the repo.
+          2. Create or edit \`RESOURCES.md\`.
+          3. Add a link to a tutorial, blog, or video that helped you learn to code.
+          4. Submit a Pull Request.
+          
+          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 6"
