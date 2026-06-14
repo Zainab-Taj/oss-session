@@ -1,10 +1,11 @@
 # OSS Session 🚀
 
-Welcome to **OSS Session**, a safe and welcoming space for students to make their first Open Source contributions! 
+Welcome to **OSS Session**, a safe and welcoming space for students to make their first Open Source contributions!
 
 ## Why Contribute? 🌟
 
 Contributing to Open Source Software (OSS) is a fantastic way to learn new skills, collaborate with others, and build a portfolio of work. Here, you'll learn:
+
 - How to fork a repository
 - How to create a branch
 - How to commit changes
