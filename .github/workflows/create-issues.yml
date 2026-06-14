@@ -1,0 +1,38 @@
+name: Create Initial Issues
+on:
+  push:
+    paths:
+      - '.github/workflows/create-issues.yml'
+
+permissions:
+  issues: write
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create --title "Add your name to CONTRIBUTORS.md" --body "## Welcome!
+          This is a great issue for beginners. Your task is to:
+          1. Fork the repo.
+          2. Create a new file called \`CONTRIBUTORS.md\` if it doesn't exist.
+          3. Add your name to the file!
+          4. Submit a Pull Request.
+          
+          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 1"
+          
+          gh issue create --title "Add a cool badge to README.md" --body "## Welcome!
+          Want to make our repo look cooler? Your task is to:
+          1. Go to [shields.io](https://shields.io/) and find a cool open source badge.
+          2. Fork this repo and add the badge markdown to the top of \`README.md\`.
+          3. Submit a Pull Request!
+          
+          Once merged, you'll earn your Awesome OSS Contributor Badge!" --label "good first issue" || echo "Failed to create issue 2"
+          
+          gh issue create --title "Fix a typo in the README" --body "Find any typo or grammatical error in the \`README.md\` and open a PR to fix it. If you can't find one, you can rephrase a sentence to make it sound better!" --label "good first issue" || echo "Failed to create issue 3"
