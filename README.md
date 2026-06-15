@@ -28,4 +28,4 @@ Every student who successfully merges their first Pull Request will receive the 
 
 We have automated checks that run on every Pull Request. These checks are common in real-world OSS projects to ensure code quality. Our checks simply verify that your Markdown files are formatted correctly. Don't worry if they fail at first—you can always update your PR to fix them!
 
-Zainab Taj
+Zainab Taj - Ananya Gserve 2026
